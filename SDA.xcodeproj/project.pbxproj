@@ -60,17 +60,59 @@
 		B846B29F21361F67000DEA5C /* SDA */ = {
 			isa = PBXGroup;
 			children = (
-				B846B2A021361F68000DEA5C /* AppDelegate.swift */,
-				B846B2A421361F68000DEA5C /* Main.storyboard */,
-				B846B2B221364606000DEA5C /* MainVC.swift */,
+				B846B2C021365668000DEA5C /* Supporting Files */,
+				B846B2BF21365651000DEA5C /* Helper */,
+				B846B2BE21365638000DEA5C /* Networking */,
+				B846B2BD21365627000DEA5C /* Controller */,
+				B846B2BC21365606000DEA5C /* Model */,
 				B846B2A721361F69000DEA5C /* Assets.xcassets */,
-				B846B2A921361F69000DEA5C /* LaunchScreen.storyboard */,
-				B846B2AC21361F69000DEA5C /* Info.plist */,
-				B846B2B421364909000DEA5C /* NetworkService.swift */,
-				B846B2B6213649BE000DEA5C /* Term.swift */,
-				B846B2B8213649F6000DEA5C /* Constants.swift */,
 			);
 			path = SDA;
+			sourceTree = "<group>";
+		};
+		B846B2BC21365606000DEA5C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B846B2B6213649BE000DEA5C /* Term.swift */,
+			);
+			name = Model;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		B846B2BD21365627000DEA5C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B846B2B221364606000DEA5C /* MainVC.swift */,
+			);
+			name = Controller;
+			path = "New Group1";
+			sourceTree = "<group>";
+		};
+		B846B2BE21365638000DEA5C /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				B846B2B421364909000DEA5C /* NetworkService.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		B846B2BF21365651000DEA5C /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				B846B2B8213649F6000DEA5C /* Constants.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		B846B2C021365668000DEA5C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B846B2A421361F68000DEA5C /* Main.storyboard */,
+				B846B2A021361F68000DEA5C /* AppDelegate.swift */,
+				B846B2A921361F69000DEA5C /* LaunchScreen.storyboard */,
+				B846B2AC21361F69000DEA5C /* Info.plist */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

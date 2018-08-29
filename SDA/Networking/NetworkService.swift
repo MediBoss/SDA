@@ -14,7 +14,7 @@ struct NetworkService{
     
     init(word_id: String) {
         self.word_id = word_id
-        self.completeURL = URL(string: "")
+        self.completeURL = URL(string: "\(Constants.baseURL)\(Constants.source_lang)")
     }
     
     func makeAPIRequest(_ completionHandler: @escaping (Term) ->Void){
