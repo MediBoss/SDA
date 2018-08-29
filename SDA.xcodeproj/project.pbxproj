@@ -63,28 +63,28 @@
 				B846B2C021365668000DEA5C /* Supporting Files */,
 				B846B2BF21365651000DEA5C /* Helper */,
 				B846B2BE21365638000DEA5C /* Networking */,
-				B846B2BD21365627000DEA5C /* Controller */,
-				B846B2BC21365606000DEA5C /* Model */,
+				B846B2BD21365627000DEA5C /* View Controllers */,
+				B846B2BC21365606000DEA5C /* Models */,
 				B846B2A721361F69000DEA5C /* Assets.xcassets */,
 			);
 			path = SDA;
 			sourceTree = "<group>";
 		};
-		B846B2BC21365606000DEA5C /* Model */ = {
+		B846B2BC21365606000DEA5C /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				B846B2B6213649BE000DEA5C /* Term.swift */,
 			);
-			name = Model;
+			name = Models;
 			path = "New Group";
 			sourceTree = "<group>";
 		};
-		B846B2BD21365627000DEA5C /* Controller */ = {
+		B846B2BD21365627000DEA5C /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				B846B2B221364606000DEA5C /* MainVC.swift */,
 			);
-			name = Controller;
+			name = "View Controllers";
 			path = "New Group1";
 			sourceTree = "<group>";
 		};
