@@ -43,7 +43,7 @@
                                         <rect key="frame" x="25" y="70" width="295" height="65"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -56,7 +56,21 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xQ0-bX-6gq" userLabel="outputView">
                                 <rect key="frame" x="15" y="354" width="345" height="205"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="v7u-ac-ce2">
+                                        <rect key="frame" x="0.0" y="0.0" width="345" height="205"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="v7u-ac-ce2" firstAttribute="top" secondItem="xQ0-bX-6gq" secondAttribute="top" id="3vP-qr-C7s"/>
+                                    <constraint firstAttribute="trailing" secondItem="v7u-ac-ce2" secondAttribute="trailing" id="kzp-ho-6ST"/>
+                                    <constraint firstItem="v7u-ac-ce2" firstAttribute="leading" secondItem="xQ0-bX-6gq" secondAttribute="leading" id="lbi-FK-Ru4"/>
+                                    <constraint firstAttribute="bottom" secondItem="v7u-ac-ce2" secondAttribute="bottom" id="ujx-EG-XvN"/>
+                                </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jUy-rv-PLo">
                                 <rect key="frame" x="15" y="583" width="345" height="60"/>
