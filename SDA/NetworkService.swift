@@ -10,5 +10,14 @@ import Foundation
 
 struct NetworkService{
     var word_id : String?
+    var completeURL: URL?
     
+    init(word_id: String) {
+        self.word_id = word_id
+        self.completeURL = URL(string: "")
+    }
+    
+    func makeAPIRequest(_ completionHandler: @escaping (Term) ->Void){
+        
+    }
 }

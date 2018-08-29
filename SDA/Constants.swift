@@ -13,5 +13,6 @@ public class Constants{
     static let apiKey: String = "e43c5c4fc39024d2394905f2308e807e"
     static let source_lang: String = "eng"
     static let app_id: String = "28a38b56"
+    static let baseURL: URL = URL(string: "https://od-api.oxforddictionaries.com:443/api/v1/entries")
     
 }
