@@ -38,11 +38,9 @@ struct NetworkService{
                             // if an error is found while decoding the JSON data
                         print(errorFromDataReceived.localizedDescription)
                     }
-                    
                 default:
                         // if a code other than 200 is returned
                     print("HTTP CODE : \(httpResponse.statusCode)")
-                    
                 }
                 
             }else{
