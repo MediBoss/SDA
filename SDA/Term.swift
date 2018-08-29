@@ -10,11 +10,11 @@ import Foundation
 
 struct Term: Decodable{
     
-    let definition: String?
-    let lexicalCategory: String?
+    let definition: String? // first definition of the term
+    let lexicalCategory: String? // verb, noun, pronoun, etc...
     
 
-    enum mainEntryKey: String, CodingKey{
+    enum resultsKey: String, CodingKey{
         case results
     }
     enum lexicalEntriesKey: String, CodingKey{
@@ -26,22 +26,31 @@ struct Term: Decodable{
     enum sensesKey: String, CodingKey{
         case senses
     }
-    enum definitions: String, CodingKey{
+    enum definitionsKey: String, CodingKey{
         case definitions
+    }
+    enum lexicalCategoryKey: String, CodingKey{
+        case lexicalCategory
     }
     enum mainKeys: String, CodingKey{
         case definition
-        case lexicalCategory
+        case category
     }
     
     init(from decoder: Decoder) throws {
-        let mainEntryPoint = try decoder.container(keyedBy: mainEntryKey.self)
-        let lexicalEntryPoint = try mainEntryPoint.nestedContainer(keyedBy: lexicalEntryPoint.self, forKey: .results)
-        let entriesEntryPoint = try lexicalEntryPoint.nestedContainer(keydBy: entriesKey.self, forKey: .entries)
-        let sensesEntryPoint = try entriesEntryPoint.nestedConatiner(keyedBy: sensesKey.self, forKey: .senses)
-        let definitionEntryPoint = try sensesEntryPoint.nestedContainer(keyedBy: definitions.self. forKey: .definitions)
         
-        self.definition = try definitionEntryPoint.decode(String.self, forKey: .definition)
-        //self.lexicalCategory = try 
+                // Decoding each needed layer of the JSON file returned 
+        let resultsEntryPoint = try decoder.container(keyedBy: resultsKey.self)
+        let lexicalEntryPoint = try resultsEntryPoint.nestedContainer(keyedBy: lexicalEntriesKey.self, forKey: .results)
+        let entriesKeyEntryPoint = try lexicalEntryPoint.nestedContainer(keyedBy: entriesKey.self, forKey: .lexicalEntries)
+        let sensesEntryPoint = try entriesKeyEntryPoint.nestedContainer(keyedBy: sensesKey.self, forKey: .entries)
+        let definitionsEntryPoint = try sensesEntryPoint.nestedContainer(keyedBy: definitionsKey.self, forKey: .senses)
+        let categoryEntryPoint = try lexicalEntryPoint.nestedContainer(keyedBy: lexicalCategoryKey.self, forKey: .lexicalEntries)
+        
+        //Initializing the class variables
+        self.definition = try definitionsEntryPoint.decode(String.self, forKey: .definitions)
+        self.lexicalCategory = try categoryEntryPoint.decode(String.self, forKey: .lexicalCategory)
+        
+        
     }
 }
