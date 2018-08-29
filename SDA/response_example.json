@@ -1,0 +1,267 @@
+{
+  "metadata": {
+    "provider": "Oxford University Press"
+  },
+  "results": [
+    {
+      "id": "continue",
+      "language": "en",
+      "lexicalEntries": [
+        {
+          "derivatives": [
+            {
+              "id": "continuable",
+              "text": "continuable"
+            },
+            {
+              "id": "continuer",
+              "text": "continuer"
+            }
+          ],
+          "entries": [
+            {
+              "etymologies": [
+                "Middle English: from Old French continuer, from Latin continuare, from continuus (see continuous)"
+              ],
+              "grammaticalFeatures": [
+                {
+                  "text": "Present",
+                  "type": "Tense"
+                }
+              ],
+              "homographNumber": "000",
+              "senses": [
+                {
+                  "definitions": [
+                    "persist in an activity or process"
+                  ],
+                  "examples": [
+                    {
+                      "text": "he was unable to continue with his job"
+                    },
+                    {
+                      "text": "prices continued to fall during April"
+                    }
+                  ],
+                  "id": "m_en_gbus0214900.009",
+                  "notes": [
+                    {
+                      "text": "no object",
+                      "type": "grammaticalNote"
+                    }
+                  ],
+                  "short_definitions": [
+                    "persist in activity"
+                  ],
+                  "subsenses": [
+                    {
+                      "definitions": [
+                        "remain in existence or operation"
+                      ],
+                      "examples": [
+                        {
+                          "text": "discussions continued throughout the year"
+                        }
+                      ],
+                      "id": "m_en_gbus0214900.015",
+                      "short_definitions": [
+                        "remain in existence"
+                      ],
+                      "thesaurusLinks": [
+                        {
+                          "entry_id": "continue",
+                          "sense_id": "t_en_gb0002948.002"
+                        },
+                        {
+                          "entry_id": "continue",
+                          "sense_id": "t_en_gb0002948.004"
+                        }
+                      ]
+                    },
+                    {
+                      "definitions": [
+                        "remain in a specified position or state"
+                      ],
+                      "examples": [
+                        {
+                          "text": "the weather continued warm and pleasant"
+                        },
+                        {
+                          "text": "they have indicated their willingness to continue in office"
+                        }
+                      ],
+                      "id": "m_en_gbus0214900.016",
+                      "short_definitions": [
+                        "remain in position or state"
+                      ],
+                      "thesaurusLinks": [
+                        {
+                          "entry_id": "continue",
+                          "sense_id": "t_en_gb0002948.005"
+                        }
+                      ]
+                    },
+                    {
+                      "definitions": [
+                        "carry on with (something that one has begun)"
+                      ],
+                      "examples": [
+                        {
+                          "text": "the Archive has continued its programme of research"
+                        }
+                      ],
+                      "id": "m_en_gbus0214900.017",
+                      "notes": [
+                        {
+                          "text": "with object",
+                          "type": "grammaticalNote"
+                        }
+                      ],
+                      "short_definitions": [
+                        "carry on with"
+                      ],
+                      "thesaurusLinks": [
+                        {
+                          "entry_id": "continue",
+                          "sense_id": "t_en_gb0002948.003"
+                        }
+                      ]
+                    },
+                    {
+                      "definitions": [
+                        "carry on travelling in the same direction"
+                      ],
+                      "examples": [
+                        {
+                          "text": "they continued northwards to Glasgow"
+                        }
+                      ],
+                      "id": "m_en_gbus0214900.019",
+                      "notes": [
+                        {
+                          "text": "with adverbial of direction",
+                          "type": "grammaticalNote"
+                        }
+                      ],
+                      "short_definitions": [
+                        "carry on travelling"
+                      ],
+                      "thesaurusLinks": [
+                        {
+                          "entry_id": "draw",
+                          "sense_id": "t_en_gb0004445.003"
+                        }
+                      ]
+                    }
+                  ],
+                  "thesaurusLinks": [
+                    {
+                      "entry_id": "continue",
+                      "sense_id": "t_en_gb0002948.001"
+                    },
+                    {
+                      "entry_id": "continuing",
+                      "sense_id": "t_en_gb0002949.001"
+                    }
+                  ]
+                },
+                {
+                  "definitions": [
+                    "recommence or resume after interruption"
+                  ],
+                  "examples": [
+                    {
+                      "text": "the trial continues tomorrow"
+                    },
+                    {
+                      "text": "we continue the story from the point reached in Chapter 1"
+                    }
+                  ],
+                  "id": "m_en_gbus0214900.021",
+                  "short_definitions": [
+                    "recommence after interruption"
+                  ],
+                  "subsenses": [
+                    {
+                      "definitions": [
+                        "carry on speaking after a pause or interruption"
+                      ],
+                      "examples": [
+                        {
+                          "text": "‘Pleased to make your acquaintance,’ he continued"
+                        },
+                        {
+                          "text": "I told him he was obstructing the enquiry and he let me continue"
+                        }
+                      ],
+                      "id": "m_en_gbus0214900.022",
+                      "notes": [
+                        {
+                          "text": "no object",
+                          "type": "grammaticalNote"
+                        }
+                      ],
+                      "short_definitions": [
+                        "carry on speaking"
+                      ]
+                    },
+                    {
+                      "definitions": [
+                        "postpone or adjourn (a legal proceeding)"
+                      ],
+                      "domains": [
+                        "Law"
+                      ],
+                      "examples": [
+                        {
+                          "text": "the case was continued without a finding until August 2"
+                        }
+                      ],
+                      "id": "m_en_gbus0214900.023",
+                      "notes": [
+                        {
+                          "text": "with object",
+                          "type": "grammaticalNote"
+                        }
+                      ],
+                      "short_definitions": [
+                        "postpone or adjourn legal proceeding"
+                      ],
+                      "thesaurusLinks": [
+                        {
+                          "entry_id": "shelve",
+                          "sense_id": "t_en_gb0013363.001"
+                        }
+                      ]
+                    }
+                  ],
+                  "thesaurusLinks": [
+                    {
+                      "entry_id": "continue",
+                      "sense_id": "t_en_gb0002948.006"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "language": "en",
+          "lexicalCategory": "Verb",
+          "pronunciations": [
+            {
+              "audioFile": "http://audio.oxforddictionaries.com/en/mp3/xcontinue_gb_1.mp3",
+              "dialects": [
+                "British English"
+              ],
+              "phoneticNotation": "IPA",
+              "phoneticSpelling": "kənˈtɪnjuː"
+            }
+          ],
+          "text": "continue"
+        }
+      ],
+      "type": "headword",
+      "word": "continue"
+    }
+  ]
+}
