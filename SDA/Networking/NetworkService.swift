@@ -15,7 +15,8 @@ struct NetworkService{
         
         // MARK: Setting up the request to be made to the api
         let url = URL(string: "\(Constants.baseURL)/\(Constants.source_lang)/\(word)")
-        var request: URLRequest = URLRequest(url: url!)
+        guard let unwrapedURL = url else {return}
+        var request: URLRequest = URLRequest(url: unwrapedURL)
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         request.addValue("\(Constants.app_id)", forHTTPHeaderField: "app_id")
         request.addValue("\(Constants.apiKey)", forHTTPHeaderField: "app_key")
