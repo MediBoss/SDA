@@ -12,7 +12,7 @@ struct NetworkService{
     
     func makeAPIRequest(_ word: String,_ completionHandler: @escaping (Term) ->Void){
         
-                // Setting up the request to be made to the api
+            // Setting up the request to be made to the api
         let completeURL = URL(string: "\(Constants.baseURL)/\(Constants.source_lang)/\(word)")!
         var request: URLRequest = URLRequest(url: completeURL)
         request.addValue("application/json", forHTTPHeaderField: "Accept")
@@ -27,7 +27,6 @@ struct NetworkService{
                 switch httpResponse.statusCode{
                 case 200:
                     guard let dataFromApi = data else {return}
-                    print(dataFromApi)
                     do{
                             // Decoding the data recievd from the server into a Term object
                         let decoder = JSONDecoder()

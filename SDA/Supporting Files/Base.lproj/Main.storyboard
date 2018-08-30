@@ -24,7 +24,7 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SDA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7vE-BA-zbc" userLabel="titleLabel">
                                         <rect key="frame" x="40" y="44" width="295" height="85"/>
-                                        <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="40"/>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="40"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -42,7 +42,7 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a word..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AAy-IA-yrA" userLabel="searchBar">
                                         <rect key="frame" x="25" y="70" width="295" height="108.66666666666669"/>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="25"/>
                                         <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
                                     </textField>
                                 </subviews>
@@ -57,19 +57,30 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xQ0-bX-6gq" userLabel="outputView">
                                 <rect key="frame" x="15" y="421.66666666666669" width="345" height="248.33333333333331"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="v7u-ac-ce2">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="o4z-c2-FFQ">
                                         <rect key="frame" x="0.0" y="0.0" width="345" height="248.33333333333334"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verb" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qbx-WF-mDP" userLabel="categoryLabel">
+                                                <rect key="frame" x="0.0" y="0.0" width="345" height="124.33333333333333"/>
+                                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="50"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="v7u-ac-ce2" userLabel="definitionTextView">
+                                                <rect key="frame" x="0.0" y="124.33333333333331" width="345" height="124"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="25"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="v7u-ac-ce2" firstAttribute="top" secondItem="xQ0-bX-6gq" secondAttribute="top" id="3vP-qr-C7s"/>
-                                    <constraint firstAttribute="trailing" secondItem="v7u-ac-ce2" secondAttribute="trailing" id="kzp-ho-6ST"/>
-                                    <constraint firstItem="v7u-ac-ce2" firstAttribute="leading" secondItem="xQ0-bX-6gq" secondAttribute="leading" id="lbi-FK-Ru4"/>
-                                    <constraint firstAttribute="bottom" secondItem="v7u-ac-ce2" secondAttribute="bottom" id="ujx-EG-XvN"/>
+                                    <constraint firstItem="o4z-c2-FFQ" firstAttribute="leading" secondItem="xQ0-bX-6gq" secondAttribute="leading" id="2WG-32-CaX"/>
+                                    <constraint firstItem="o4z-c2-FFQ" firstAttribute="top" secondItem="xQ0-bX-6gq" secondAttribute="top" id="WDc-pV-xBC"/>
+                                    <constraint firstAttribute="bottom" secondItem="o4z-c2-FFQ" secondAttribute="bottom" id="a2b-EU-emj"/>
+                                    <constraint firstAttribute="trailing" secondItem="o4z-c2-FFQ" secondAttribute="trailing" id="bDn-7C-1fl"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jUy-rv-PLo">
@@ -78,7 +89,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="uKN-gO-5rA"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="17"/>
                                 <state key="normal" title="Search">
                                     <color key="titleColor" name="tcWhite"/>
                                 </state>
@@ -109,13 +120,14 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="categoryLabel" destination="qbx-WF-mDP" id="saC-xy-MhT"/>
                         <outlet property="searchBar" destination="AAy-IA-yrA" id="ZOd-Z4-lXm"/>
                         <outlet property="textView" destination="v7u-ac-ce2" id="3gg-hQ-Xq6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+            <point key="canvasLocation" x="136.80000000000001" y="133.00492610837438"/>
         </scene>
     </scenes>
     <resources>

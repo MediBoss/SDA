@@ -13,6 +13,7 @@ class MainVC: UIViewController{
     // - MARK : IBOULETS
     @IBOutlet weak var searchBar: UITextField!
     @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var categoryLabel: UILabel!
     
     
     override func viewDidLoad() {
