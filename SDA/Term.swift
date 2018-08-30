@@ -20,6 +20,9 @@ struct Word: Decodable {
         case results
         enum LexicalEntries: String, CodingKey{
             case entries, lexicalEntries
+            enum lexicalCategory: String, CodingKey{
+                case lexicalCategory
+            }
             enum entriesKey: String, CodingKey{
                 case entries
                 enum sensesKey: String, CodingKey{
@@ -56,11 +59,14 @@ struct Word: Decodable {
         var tenthEntryPoint = try ninethEntryPoint.nestedUnkeyedContainer(forKey: .definitions)
         
         
+        
+        
+        
     
        
         
         self.definition = try tenthEntryPoint.decode(String.self)
-        self.lexicalCategory = ""
+        self.lexicalCategory = try fourthEntryPoint.decode(String.self)
         
         
     }
