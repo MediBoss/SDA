@@ -62,14 +62,14 @@
 		B846B29F21361F67000DEA5C /* SDA */ = {
 			isa = PBXGroup;
 			children = (
-				B8DEBCED2138B80D00B516F0 /* Model */,
+				B8DEBCF02138B86800B516F0 /* Extension */,
+				B8DEBCEF2138B85400B516F0 /* VC */,
+				B8DEBCEE2138B84100B516F0 /* M */,
 				B846B2AC21361F69000DEA5C /* Info.plist */,
-				B846B2B221364606000DEA5C /* MainVC.swift */,
 				B846B2C021365668000DEA5C /* Supporting Files */,
 				B846B2BF21365651000DEA5C /* Helper */,
 				B846B2BE21365638000DEA5C /* Networking */,
 				B846B2A721361F69000DEA5C /* Assets.xcassets */,
-				B846B2C121375F1F000DEA5C /* MainMenuVC+Textfiled.swift */,
 			);
 			path = SDA;
 			sourceTree = "<group>";
@@ -100,13 +100,28 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		B8DEBCED2138B80D00B516F0 /* Model */ = {
+		B8DEBCEE2138B84100B516F0 /* M */ = {
 			isa = PBXGroup;
 			children = (
 				B846B2B6213649BE000DEA5C /* Term.swift */,
 			);
-			name = Model;
-			path = "New Group";
+			path = M;
+			sourceTree = "<group>";
+		};
+		B8DEBCEF2138B85400B516F0 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				B846B2B221364606000DEA5C /* MainVC.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		B8DEBCF02138B86800B516F0 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				B846B2C121375F1F000DEA5C /* MainMenuVC+Textfiled.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
