@@ -12,12 +12,14 @@ struct NetworkService{
     
     func makeAPIRequest(_ word: String,_ completionHandler: @escaping (Term) ->Void){
         
-        let completeURL = URL(string: "\(Constants.baseURL)/en/\(word)")!
+                // Setting up the request to be made to the api
+        let completeURL = URL(string: "\(Constants.baseURL)/\(Constants.source_lang)/\(word)")!
         var request: URLRequest = URLRequest(url: completeURL)
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         request.addValue("\(Constants.app_id)", forHTTPHeaderField: "app_id")
         request.addValue("\(Constants.apiKey)", forHTTPHeaderField: "app_key")
         
+            // Launching the GET request to the API
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             if error == nil{ // if there is no error during the api call
                 guard let httpResponse = response as? HTTPURLResponse else {return}
@@ -27,11 +29,10 @@ struct NetworkService{
                     guard let dataFromApi = data else {return}
                     print(dataFromApi)
                     do{
-                        
+                            // Decoding the data recievd from the server into a Term object
                         let decoder = JSONDecoder()
                         let term = try decoder.decode(Term.self, from: dataFromApi)
-                        print(term)
- 
+                        completionHandler(term)
                     }catch let errorFromDataReceived{
                             // if an error is found while decoding the JSON data
                         print(errorFromDataReceived.localizedDescription)

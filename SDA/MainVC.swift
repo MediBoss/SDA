@@ -24,16 +24,14 @@ class MainVC: UIViewController{
     // - MARK : IBACTIONS
 
     @IBAction func searchButtonIsTaped(_ sender: Any) {
+        guard let word = self.searchBar.text else {return}
         let networkRequest = NetworkService()
-        networkRequest.makeAPIRequest(self.searchBar.text!) { (Term) in
-            print(Term.definition)
+        
+        networkRequest.makeAPIRequest(word) { (Term) in
+            guard let definition = Term.definition else {return}
             DispatchQueue.main.async {
-                guard let definition = Term.definition else {return}
-                print(definition)
                 self.textView.text = definition
             }
         }
     }
-    
-
 }

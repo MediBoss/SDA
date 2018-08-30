@@ -8,8 +8,6 @@
 
 import Foundation
 
-
-
 struct Term: Decodable {
     
     var definition: String? // first definition of the term
@@ -33,14 +31,7 @@ struct Term: Decodable {
             }
         }
     }
-    
-    enum lexicalCategoryKey: String, CodingKey{
-        case lexicalCategory
-    }
-    enum mainKeys: String, CodingKey{
-        case definition = "definitions"
-    }
-    
+
     init(from decoder: Decoder) throws {
         
                 // Decoding each needed layer of the JSON file returned
