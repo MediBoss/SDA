@@ -18,7 +18,7 @@ class MainVC: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         self.searchBar.delegate = self as? UITextFieldDelegate
-        let term = "hello"
+        let term = "Continue"
         let network = NetworkService()
         network.makeAPIRequest(term) { (term) in
             //stuff

@@ -13,9 +13,7 @@ import Foundation
 struct Term: Decodable {
     
     var definition: String? // first definition of the term
-    var lexicalCategory: String? // verb, noun, pronoun, etc...
-    
-    
+
     enum resultsKey: String, CodingKey{
         case results
         enum LexicalEntries: String, CodingKey{
@@ -41,7 +39,6 @@ struct Term: Decodable {
     }
     enum mainKeys: String, CodingKey{
         case definition = "definitions"
-        case category = "lexicalCategory"
     }
     
     init(from decoder: Decoder) throws {
@@ -60,8 +57,6 @@ struct Term: Decodable {
         
         
         self.definition = try tenthEntryPoint.decode(String.self)
-        self.lexicalCategory = ""
-        
         
     }
 }
