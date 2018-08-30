@@ -10,10 +10,10 @@ import Foundation
 
 
 
-struct Word: Decodable {
+struct Term: Decodable {
     
-    let definition: String? // first definition of the term
-    let lexicalCategory: String? // verb, noun, pronoun, etc...
+    var definition: String? // first definition of the term
+    var lexicalCategory: String? // verb, noun, pronoun, etc...
     
     
     enum resultsKey: String, CodingKey{
@@ -28,7 +28,7 @@ struct Word: Decodable {
                 enum sensesKey: String, CodingKey{
                     case senses
                     enum DefinitionsKey: String, CodingKey{
-                        case definitions
+                        case definitions = "definitions"
                     }
                 }
                 
@@ -59,14 +59,8 @@ struct Word: Decodable {
         var tenthEntryPoint = try ninethEntryPoint.nestedUnkeyedContainer(forKey: .definitions)
         
         
-        
-        
-        
-    
-       
-        
         self.definition = try tenthEntryPoint.decode(String.self)
-        self.lexicalCategory = try fourthEntryPoint.decode(String.self)
+        self.lexicalCategory = ""
         
         
     }

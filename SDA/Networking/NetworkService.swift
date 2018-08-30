@@ -10,7 +10,7 @@ import Foundation
 
 struct NetworkService{
     
-    func makeAPIRequest(_ word: String,_ completionHandler: @escaping (Word) ->Void){
+    func makeAPIRequest(_ word: String,_ completionHandler: @escaping (Term) ->Void){
         
         let completeURL = URL(string: "https://od-api.oxforddictionaries.com:443/api/v1/entries/en/\(word)")!
         var request: URLRequest = URLRequest(url: completeURL)
@@ -27,10 +27,11 @@ struct NetworkService{
                     guard let dataFromApi = data else {return}
                     print(dataFromApi)
                     do{
+                        
                         let decoder = JSONDecoder()
-                        let term = try decoder.decode(Word.self, from: dataFromApi)
+                        let term = try decoder.decode(Term.self, from: dataFromApi)
                         print(term)
-                      
+ 
                     }catch let errorFromDataReceived{
                             // if an error is found while decoding the JSON data
                         print(errorFromDataReceived.localizedDescription)
