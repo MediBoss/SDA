@@ -39,7 +39,7 @@ struct Term: Decodable{
     
     init(from decoder: Decoder) throws {
         
-                // Decoding each needed layer of the JSON file returned 
+                // Decoding each needed layer of the JSON file returned
         let resultsEntryPoint = try decoder.container(keyedBy: resultsKey.self)
         let lexicalEntryPoint = try resultsEntryPoint.nestedContainer(keyedBy: lexicalEntriesKey.self, forKey: .results)
         let entriesKeyEntryPoint = try lexicalEntryPoint.nestedContainer(keyedBy: entriesKey.self, forKey: .lexicalEntries)
@@ -50,7 +50,6 @@ struct Term: Decodable{
         //Initializing the class variables
         self.definition = try definitionsEntryPoint.decode(String.self, forKey: .definitions)
         self.lexicalCategory = try categoryEntryPoint.decode(String.self, forKey: .lexicalCategory)
-        
         
     }
 }

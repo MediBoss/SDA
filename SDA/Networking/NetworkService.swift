@@ -14,13 +14,19 @@ struct NetworkService{
     
     init(word_id: String) {
         self.word_id = word_id
-        self.completeURL = URL(string: "\(Constants.baseURL)"+"/"+"\(Constants.source_lang)" + "\(self.word_id)")!
+        self.completeURL = URL(string: "\(Constants.baseURL)"+"/"+"\(Constants.source_lang)" + "/\(self.word_id)")!
+        
         
     }
     
     func makeAPIRequest(_ completionHandler: @escaping (Term) ->Void){
         
-        let request: URLRequest = URLRequest(url: self.completeURL)
+        var request: URLRequest = URLRequest(url: self.completeURL)
+//        request.setValue("e43c5c4fc39024d2394905f2308e807e", forHTTPHeaderField: "app_key")
+//        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        request.allHTTPHeaderFields = ["app_key":"e43c5c4fc39024d2394905f2308e807e",
+                                       "Accept":"application/json",
+                                       "app_id":Constants.app_id]
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             if error == nil{ // if there is no error during the api call
                 guard let httpResponse = response as? HTTPURLResponse else {return}
@@ -28,11 +34,16 @@ struct NetworkService{
                 switch httpResponse.statusCode{
                 case 200:
                     guard let dataFromApi = data else {return}
+                    print(dataFromApi)
                     do{
+                        
                             // Decoding the data from the API from JSON format to Term Object
+                        
                         let decoder = JSONDecoder()
                         let term = try decoder.decode(Term.self, from: dataFromApi)
+                        print(term)
                         completionHandler(term)
+                        
                         
                     }catch let errorFromDataReceived{
                             // if an error is found while decoding the JSON data

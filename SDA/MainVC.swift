@@ -14,19 +14,22 @@ class MainVC: UIViewController{
     @IBOutlet weak var searchBar: UITextField!
     @IBOutlet weak var textView: UITextView!
     
-    // - MARK : IBACTIONS
-    @IBAction func searchButtonIsTaped(_ sender: UIButton) {
-        //code goes here when button is taped
-    }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        self.searchBar.delegate = self as? UITextFieldDelegate
+        let term = "hello"
+        let network = NetworkService(word_id: term)
+        network.makeAPIRequest { (word) in
+            print(word)
+        }
+       
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    // - MARK : IBACTIONS
+    @IBAction func searchButtonIsTaped(_ sender: UIButton) {
+
     }
+
+
 }
