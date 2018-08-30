@@ -62,9 +62,9 @@
 		B846B29F21361F67000DEA5C /* SDA */ = {
 			isa = PBXGroup;
 			children = (
+				B8DEBCEC2138B7AF00B516F0 /* Model */,
 				B846B2AC21361F69000DEA5C /* Info.plist */,
 				B846B2B221364606000DEA5C /* MainVC.swift */,
-				B846B2B6213649BE000DEA5C /* Term.swift */,
 				B846B2C021365668000DEA5C /* Supporting Files */,
 				B846B2BF21365651000DEA5C /* Helper */,
 				B846B2BE21365638000DEA5C /* Networking */,
@@ -98,6 +98,15 @@
 				B846B2A921361F69000DEA5C /* LaunchScreen.storyboard */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B8DEBCEC2138B7AF00B516F0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B846B2B6213649BE000DEA5C /* Term.swift */,
+			);
+			name = Model;
+			path = Helper/Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
