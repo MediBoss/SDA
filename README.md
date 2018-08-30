@@ -30,7 +30,7 @@ Simple iOS Dictioanry app using the Oxford API to fetch nouns, verbs, pronouns, 
 
 ## Screenshots
 
-<img src= "Screenshots/sc1.png" width = 250 height = 450></img><img src= "Screenshots/sc2.png" width = 250 height = 450>
+<img src= "Screenshots/sc1.PNG" width = 250 height = 450></img><img src= "Screenshots/sc2.PNG" width = 250 height = 450>
 
 
 
