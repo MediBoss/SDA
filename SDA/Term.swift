@@ -55,8 +55,7 @@ struct Term: Decodable {
         let ninethEntryPoint = try eithEntryPoint.nestedContainer(keyedBy: resultsKey.LexicalEntries.entriesKey.sensesKey.DefinitionsKey.self)
         var tenthEntryPoint = try ninethEntryPoint.nestedUnkeyedContainer(forKey: .definitions)
         
-        
-        self.definition = try tenthEntryPoint.decode(String.self)
+        self.definition = try? tenthEntryPoint.decode(String.self)
         
     }
 }

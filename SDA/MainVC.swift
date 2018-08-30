@@ -17,19 +17,23 @@ class MainVC: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.searchBar.delegate = self as? UITextFieldDelegate
-        let term = "Continue"
-        let network = NetworkService()
-        network.makeAPIRequest(term) { (term) in
-            //stuff
-        }
-       
+        self.searchBar.delegate = self as UITextFieldDelegate
+     
     }
     
     // - MARK : IBACTIONS
-    @IBAction func searchButtonIsTaped(_ sender: UIButton) {
 
+    @IBAction func searchButtonIsTaped(_ sender: Any) {
+        let networkRequest = NetworkService()
+        networkRequest.makeAPIRequest(self.searchBar.text!) { (Term) in
+            print(Term.definition)
+            DispatchQueue.main.async {
+                guard let definition = Term.definition else {return}
+                print(definition)
+                self.textView.text = definition
+            }
+        }
     }
-
+    
 
 }

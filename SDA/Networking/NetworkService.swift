@@ -12,7 +12,7 @@ struct NetworkService{
     
     func makeAPIRequest(_ word: String,_ completionHandler: @escaping (Term) ->Void){
         
-        let completeURL = URL(string: "https://od-api.oxforddictionaries.com:443/api/v1/entries/en/\(word)")!
+        let completeURL = URL(string: "\(Constants.baseURL)/en/\(word)")!
         var request: URLRequest = URLRequest(url: completeURL)
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         request.addValue("\(Constants.app_id)", forHTTPHeaderField: "app_id")

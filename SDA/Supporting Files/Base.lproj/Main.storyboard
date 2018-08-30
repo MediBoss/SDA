@@ -83,7 +83,7 @@
                                     <color key="titleColor" name="tcWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="searchButtonIsTaped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1AZ-C3-ZKT"/>
+                                    <action selector="searchButtonIsTaped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O5f-Ap-7a6"/>
                                 </connections>
                             </button>
                         </subviews>
