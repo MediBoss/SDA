@@ -10,13 +10,13 @@ import Foundation
 
 struct NetworkService{
     
-    func makeAPIRequest(_ word: String,_ completionHandler: @escaping (Term) ->Void){
+    func makeAPIRequest(_ word: String,_ completionHandler: @escaping (Word) ->Void){
         
-        var completeURL = URL(string: "\(Constants.baseURL)"+"/"+"\(Constants.source_lang)" + "/\(word)")!
+        let completeURL = URL(string: "https://od-api.oxforddictionaries.com:443/api/v1/entries/en/\(word)")!
         var request: URLRequest = URLRequest(url: completeURL)
-        request.allHTTPHeaderFields = ["app_key":"e43c5c4fc39024d2394905f2308e807e",
-                                       "Accept":"application/json",
-                                       "app_id":Constants.app_id]
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.addValue("\(Constants.app_id)", forHTTPHeaderField: "app_id")
+        request.addValue("\(Constants.apiKey)", forHTTPHeaderField: "app_key")
         
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             if error == nil{ // if there is no error during the api call
@@ -27,10 +27,9 @@ struct NetworkService{
                     guard let dataFromApi = data else {return}
                     print(dataFromApi)
                     do{
-                            // Decoding the data from the API from JSON format to Term Object
-                        //let decoder = JSONDecoder()
-                        //let term = try decoder.decode(Term.self, from: dataFromApi)
-                        //print(term)
+                        let decoder = JSONDecoder()
+                        let term = try decoder.decode(Word.self, from: dataFromApi)
+                        print(term)
                       
                     }catch let errorFromDataReceived{
                             // if an error is found while decoding the JSON data

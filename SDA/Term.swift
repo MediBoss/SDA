@@ -18,40 +18,50 @@ struct Word: Decodable {
     
     enum resultsKey: String, CodingKey{
         case results
+        enum LexicalEntries: String, CodingKey{
+            case entries, lexicalEntries
+            enum entriesKey: String, CodingKey{
+                case entries
+                enum sensesKey: String, CodingKey{
+                    case senses
+                    enum DefinitionsKey: String, CodingKey{
+                        case definitions
+                    }
+                }
+                
+            }
+        }
     }
-    enum lexicalEntriesKey: String, CodingKey{
-        case lexicalEntries
-    }
-    enum entriesKey: String, CodingKey{
-        case entries
-    }
-    enum sensesKey: String, CodingKey{
-        case senses
-    }
-    enum definitionsKey: String, CodingKey{
-        case definitions
-    }
+    
     enum lexicalCategoryKey: String, CodingKey{
         case lexicalCategory
     }
     enum mainKeys: String, CodingKey{
-        case definition
-        case category
+        case definition = "definitions"
+        case category = "lexicalCategory"
     }
     
     init(from decoder: Decoder) throws {
         
                 // Decoding each needed layer of the JSON file returned
-        let resultsEntryPoint = try decoder.container(keyedBy: resultsKey.self)
-        let lexicalEntryPoint = try resultsEntryPoint.nestedContainer(keyedBy: lexicalEntriesKey.self, forKey: .results)
-        let entriesKeyEntryPoint = try lexicalEntryPoint.nestedContainer(keyedBy: entriesKey.self, forKey: .lexicalEntries)
-        let sensesEntryPoint = try entriesKeyEntryPoint.nestedContainer(keyedBy: sensesKey.self, forKey: .entries)
-        let definitionsEntryPoint = try sensesEntryPoint.nestedContainer(keyedBy: definitionsKey.self, forKey: .senses)
-        let categoryEntryPoint = try lexicalEntryPoint.nestedContainer(keyedBy: lexicalCategoryKey.self, forKey: .lexicalEntries)
+        let firstEntryPoint = try decoder.container(keyedBy: resultsKey.self)
+        var secondEntryPoint = try firstEntryPoint.nestedUnkeyedContainer(forKey: .results)
+        let thirdEntryPoint = try secondEntryPoint.nestedContainer(keyedBy: resultsKey.LexicalEntries.self)
+        var fourthEntryPoint = try thirdEntryPoint.nestedUnkeyedContainer(forKey: .lexicalEntries)
+        let fithEntryPoint = try fourthEntryPoint.nestedContainer(keyedBy: resultsKey.LexicalEntries.entriesKey.self)
+        var sixthEntryPoint = try fithEntryPoint.nestedUnkeyedContainer(forKey: .entries)
+        let seventhEntryPoint = try sixthEntryPoint.nestedContainer(keyedBy: resultsKey.LexicalEntries.entriesKey.sensesKey.self)
+        var eithEntryPoint = try seventhEntryPoint.nestedUnkeyedContainer(forKey: .senses)
+        let ninethEntryPoint = try eithEntryPoint.nestedContainer(keyedBy: resultsKey.LexicalEntries.entriesKey.sensesKey.DefinitionsKey.self)
+        var tenthEntryPoint = try ninethEntryPoint.nestedUnkeyedContainer(forKey: .definitions)
         
-        //Initializing the class variables
-        self.definition = try definitionsEntryPoint.decode(String.self, forKey: .definitions)
-        self.lexicalCategory = try categoryEntryPoint.decode(String.self, forKey: .lexicalCategory)
+        
+    
+       
+        
+        self.definition = try tenthEntryPoint.decode(String.self)
+        self.lexicalCategory = ""
+        
         
     }
 }
