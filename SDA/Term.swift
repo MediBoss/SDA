@@ -8,12 +8,14 @@
 
 import Foundation
 
-struct Term: Decodable{
+
+
+struct Word: Decodable {
     
     let definition: String? // first definition of the term
     let lexicalCategory: String? // verb, noun, pronoun, etc...
     
-
+    
     enum resultsKey: String, CodingKey{
         case results
     }

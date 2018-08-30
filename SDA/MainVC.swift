@@ -19,9 +19,9 @@ class MainVC: UIViewController{
         super.viewDidLoad()
         self.searchBar.delegate = self as? UITextFieldDelegate
         let term = "hello"
-        let network = NetworkService(word_id: term)
-        network.makeAPIRequest { (word) in
-            print(word)
+        let network = NetworkService()
+        network.makeAPIRequest(term) { (term) in
+            //stuff
         }
        
     }
