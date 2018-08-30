@@ -1,7 +1,5 @@
 # Simple Dictionary Application (SDA)
 
-![alt text](https://cdn5.colorir.com/desenhos/color/201118/4a524d9250948a77619685294dfd4cb3.png)
-
 ## Overview 
 
 Simple iOS app using the Oxford API to fetch nouns, verbs, pronouns, adjectives and retriving their definitions and category
@@ -32,7 +30,7 @@ Simple iOS app using the Oxford API to fetch nouns, verbs, pronouns, adjectives 
 
 ## Screenshots
 
-<img src= "SDA\Assets.xcassets\screenshots\sc1.png" width = 250 height = 450></img><img src= "SDA\Assets.xcassets\screenshots\sc2.png" width = 250 height = 450>
+<img src= "sc1.png" width = 250 height = 450></img><img src= "sc2.png" width = 250 height = 450>
 
 
 
