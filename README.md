@@ -11,6 +11,7 @@ Simple iOS Dictioanry app using the Oxford API to fetch nouns, verbs, pronouns, 
 - [ ] Add Launch Screen
 - [ ] Correctly fetch category of a word 
 - [ ] Add Night Mode
+- [ ] Remove spaces in searchd word
 
 ## Contributors
 
