@@ -28,7 +28,7 @@ class MainVC: UIViewController{
         guard let word = self.searchBar.text else {return}
         let networkRequest = NetworkService()
 
-        networkRequest.makeAPIRequest(word) { (Term) in
+        networkRequest.makeAPIRequest(word.replacingOccurrences(of: " ", with: "")) { (Term) in
             guard let definition = Term.definition else {return}
             DispatchQueue.main.async {
                 self.textView.text = definition
