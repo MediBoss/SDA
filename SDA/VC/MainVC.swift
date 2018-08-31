@@ -28,10 +28,11 @@ class MainVC: UIViewController{
         guard let word = self.searchBar.text else {return}
         let networkRequest = NetworkService()
 
-        networkRequest.makeAPIRequest(word.replacingOccurrences(of: " ", with: "")) { (Term) in
-            guard let definition = Term.definition else {return}
+        networkRequest.makeAPIRequest(word) { (Term) in
             DispatchQueue.main.async {
+                guard let definition = Term.definition, let category = Term.category else {return}
                 self.textView.text = definition
+                self.categoryLabel.text = category
             }
         }
     }
