@@ -29,11 +29,13 @@ struct NetworkService{
                 switch httpResponse.statusCode{
                 case 200:
                     do{
+                        
                         guard let dataFromApi = data else {return}
                         // MARK: Decoding the data recievd from the server into a Term object
                         let decoder = JSONDecoder()
                         let term = try decoder.decode(Term.self, from: dataFromApi)
                         completionHandler(term)
+                        
                     }catch let errorFromDataReceived{
                         //MARK: Checking for possible errors
                         print(errorFromDataReceived.localizedDescription)
