@@ -12,6 +12,7 @@ Simple, Lightweight, and easy-to-use iOS Dictioanry app that uses the Oxford RES
 - [x] Correctly fetch category of a word 
 - [ ] Add Night Mode
 - [x] Remove spaces in searched word
+- [ ] Add view to the app that gives credit to the Oxford API
 
 ## Contributors
 
