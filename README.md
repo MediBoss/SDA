@@ -8,7 +8,7 @@ Simple, Lightweight, and easy-to-use iOS Dictioanry app that uses the Oxford RES
 
 - [x] Safely Unwrap URL
 - [ ] Create Logo
-- [ ] Add Launch Screen
+- [x] Add Launch Screen
 - [x] Correctly fetch category of a word 
 - [ ] Add Night Mode
 - [x] Remove spaces in searched word
