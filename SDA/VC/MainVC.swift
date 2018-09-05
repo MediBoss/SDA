@@ -19,13 +19,12 @@ class MainVC: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         self.searchBar.delegate = self as UITextFieldDelegate
-
     }
 
     // - MARK : IBACTIONS
 
     @IBAction func searchButtonIsTaped(_ sender: Any) {
-        guard let word = self.searchBar.text else {return}
+        guard let word = self.searchBar.text?.removeWhiteSpace() else {return}
         let networkRequest = NetworkService()
 
         networkRequest.makeAPIRequest(word) { (Term) in
