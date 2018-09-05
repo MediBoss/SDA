@@ -2,7 +2,7 @@
 
 ## Overview 
 
-Simple iOS Dictioanry app using the Oxford API to fetch nouns, verbs, pronouns, adjectives and retriving their definitions and category that i built during my first week at Make School.
+Simple, Lightweight, and easy-to-use iOS Dictioanry app that uses the Oxford RESTFul API to fetch nouns, verbs, pronouns, adjectives and retriving their definitions and category.
 
 ## Todo
 
