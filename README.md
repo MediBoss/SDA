@@ -9,7 +9,7 @@ Simple iOS Dictioanry app using the Oxford API to fetch nouns, verbs, pronouns, 
 - [x] Safely Unwrap URL
 - [ ] Create Logo
 - [ ] Add Launch Screen
-- [ ] Correctly fetch category of a word 
+- [x] Correctly fetch category of a word 
 - [ ] Add Night Mode
 - [x] Remove spaces in searched word
 
