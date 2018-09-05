@@ -25,6 +25,7 @@ struct NetworkService{
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             if error == nil{ // if there is no error during the api call
                 guard let httpResponse = response as? HTTPURLResponse else {return}
+                
                 // MARK: evaluating the JSON response from the API
                 switch httpResponse.statusCode{
                 case 200:
