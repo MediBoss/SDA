@@ -17,30 +17,7 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3" userLabel="mainView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Xa-H7-WWC">
-                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sdals" translatesAutoresizingMaskIntoConstraints="NO" id="Bkz-7t-PKO">
-                                        <rect key="frame" x="90" y="260" width="195" height="214"/>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="Bkz-7t-PKO" secondAttribute="trailing" constant="90" id="A1H-KV-clT"/>
-                                    <constraint firstItem="Bkz-7t-PKO" firstAttribute="leading" secondItem="4Xa-H7-WWC" secondAttribute="leading" constant="90" id="EAM-0a-fo7"/>
-                                    <constraint firstItem="Bkz-7t-PKO" firstAttribute="top" secondItem="4Xa-H7-WWC" secondAttribute="top" constant="260" id="ZVX-K7-uZq"/>
-                                    <constraint firstAttribute="bottom" secondItem="Bkz-7t-PKO" secondAttribute="bottom" constant="260" id="c4G-xY-24p"/>
-                                </constraints>
-                            </view>
-                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="4Xa-H7-WWC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="EWL-Zg-Seg"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4Xa-H7-WWC" secondAttribute="trailing" id="IZ0-0S-3vq"/>
-                            <constraint firstItem="4Xa-H7-WWC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Vf0-rD-86d"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="4Xa-H7-WWC" secondAttribute="bottom" id="d9s-EN-dGK"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
@@ -49,7 +26,4 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="sdals" width="260" height="240"/>
-    </resources>
 </document>

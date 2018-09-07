@@ -14,8 +14,13 @@ class MainVC: UIViewController{
     @IBOutlet weak var searchBar: UITextField!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var categoryLabel: UILabel!
-
-
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var rootView: UIView!
+    @IBOutlet weak var headerView: UIView!
+    @IBOutlet weak var inputViewCard: UIView!
+    @IBOutlet weak var outputViewCard: UIView!
+    @IBOutlet weak var searchButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.searchBar.delegate = self as UITextFieldDelegate

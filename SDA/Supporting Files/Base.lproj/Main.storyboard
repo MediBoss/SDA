@@ -22,18 +22,24 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JgE-02-ApH" userLabel="headerView">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="129"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SDA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7vE-BA-zbc" userLabel="titleLabel">
-                                        <rect key="frame" x="40" y="44" width="295" height="85"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SDA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZvA-XD-nbL">
+                                        <rect key="frame" x="24" y="44" width="73.333333333333329" height="85"/>
                                         <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="40"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gDb-FR-XZA">
+                                        <rect key="frame" x="306" y="71" width="51" height="31"/>
+                                        <color key="onTintColor" name="tcSeafoamGreen"/>
+                                    </switch>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="7vE-BA-zbc" secondAttribute="trailing" constant="40" id="B5P-UE-tMF"/>
-                                    <constraint firstAttribute="bottom" secondItem="7vE-BA-zbc" secondAttribute="bottom" id="Gkf-fN-p1E"/>
-                                    <constraint firstItem="7vE-BA-zbc" firstAttribute="leading" secondItem="JgE-02-ApH" secondAttribute="leading" constant="40" id="ZzA-lu-5nN"/>
+                                    <constraint firstAttribute="trailing" secondItem="gDb-FR-XZA" secondAttribute="trailing" constant="20" id="0Qd-Mh-qCu"/>
+                                    <constraint firstAttribute="bottom" secondItem="ZvA-XD-nbL" secondAttribute="bottom" id="IF9-Nu-Kia"/>
+                                    <constraint firstItem="gDb-FR-XZA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ZvA-XD-nbL" secondAttribute="trailing" constant="24" id="Tsk-FB-0Dy"/>
+                                    <constraint firstItem="ZvA-XD-nbL" firstAttribute="leading" secondItem="JgE-02-ApH" secondAttribute="leading" constant="24" id="YLq-nj-FSg"/>
+                                    <constraint firstItem="gDb-FR-XZA" firstAttribute="centerY" secondItem="ZvA-XD-nbL" secondAttribute="centerY" id="cTS-aZ-CXQ"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MGo-0r-hdF" userLabel="inputView">
@@ -101,6 +107,7 @@
                         <color key="backgroundColor" name="tcOffWhite"/>
                         <constraints>
                             <constraint firstItem="xQ0-bX-6gq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="4oQ-mB-Z8o"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="ZvA-XD-nbL" secondAttribute="top" id="4u8-rJ-XUZ"/>
                             <constraint firstItem="JgE-02-ApH" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="7DI-Bh-tmA"/>
                             <constraint firstItem="JgE-02-ApH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9sT-ES-Rzr"/>
                             <constraint firstItem="xQ0-bX-6gq" firstAttribute="top" secondItem="MGo-0r-hdF" secondAttribute="bottom" constant="24" id="Bj8-1u-X2m"/>
@@ -113,7 +120,6 @@
                             <constraint firstItem="xQ0-bX-6gq" firstAttribute="height" secondItem="MGo-0r-hdF" secondAttribute="height" id="o28-m0-3OC"/>
                             <constraint firstItem="MGo-0r-hdF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="suc-Zd-ilL"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jUy-rv-PLo" secondAttribute="bottom" constant="24" id="uJH-QR-hm4"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="7vE-BA-zbc" secondAttribute="top" id="vTb-0S-alP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jUy-rv-PLo" secondAttribute="trailing" constant="15" id="zqg-Qw-d24"/>
                             <constraint firstItem="jUy-rv-PLo" firstAttribute="top" secondItem="xQ0-bX-6gq" secondAttribute="bottom" constant="24" id="zwQ-32-Wga"/>
                         </constraints>
@@ -121,8 +127,14 @@
                     </view>
                     <connections>
                         <outlet property="categoryLabel" destination="qbx-WF-mDP" id="saC-xy-MhT"/>
+                        <outlet property="headerView" destination="JgE-02-ApH" id="IXm-97-hep"/>
+                        <outlet property="inputViewCard" destination="MGo-0r-hdF" id="TZQ-6J-qRb"/>
+                        <outlet property="outputViewCard" destination="xQ0-bX-6gq" id="lOJ-xK-uEP"/>
+                        <outlet property="rootView" destination="8bC-Xf-vdC" id="l5n-ZQ-0b9"/>
                         <outlet property="searchBar" destination="AAy-IA-yrA" id="ZOd-Z4-lXm"/>
+                        <outlet property="searchButton" destination="jUy-rv-PLo" id="eUx-vQ-8FV"/>
                         <outlet property="textView" destination="v7u-ac-ce2" id="3gg-hQ-Xq6"/>
+                        <outlet property="titleLabel" destination="ZvA-XD-nbL" id="o6u-Ja-bP6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -136,6 +148,9 @@
         </namedColor>
         <namedColor name="tcOffWhite">
             <color red="0.96899998188018799" green="0.96899998188018799" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="tcSeafoamGreen">
+            <color red="0.34900000689999999" green="0.85500001910000001" blue="0.64300000670000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="tcWhite">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
