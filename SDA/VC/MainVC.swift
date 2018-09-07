@@ -40,4 +40,22 @@ class MainVC: UIViewController{
             }
         }
     }
+    
+
+    @IBAction func themeSwitchToggled(_ sender: Any) {
+        
+    }
+    
+    // - : FUNCTION
+    
+    func dayTimeThemeIsSelected(){
+        
+    }
+    
+    
+    func nightTimeThemeIsSelected(){
+        
+    }
+    
+    
 }
