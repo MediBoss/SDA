@@ -10,7 +10,7 @@ Simple, Lightweight, and easy-to-use iOS Dictioanry app that uses the Oxford RES
 - [ ] Create Logo
 - [x] Add Launch Screen
 - [x] Correctly fetch category of a word 
-- [ ] Add Night Mode
+- [x] Add Light and Night Mode theme
 - [x] Remove spaces in searched word
 - [ ] Add view to the app that gives credit to the Oxford API
 
