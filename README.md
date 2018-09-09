@@ -33,8 +33,8 @@ Simple, Lightweight, and easy-to-use iOS Dictioanry app that uses the Oxford RES
 
 ## Screenshots
 
-<img src= "Screenshots/sc1.PNG" width = 250 height = 490></img><img src= "Screenshots/sc2.PNG" width = 260 height = 490>
-<img src= "Screenshots/sc3.PNG" width = 250 height = 490></img><img src= "Screenshots/sc4.PNG" width = 260 height = 490>
+<img src= "Screenshots/sc1.PNG" width = 250 height = 500></img><img src= "Screenshots/sc2.PNG" width = 260 height = 500>
+<img src= "Screenshots/sc3.png" width = 250 height = 500></img><img src= "Screenshots/sc4.png" width = 260 height = 500>
 
 
 
