@@ -137,6 +137,7 @@
                         <outlet property="searchBar" destination="AAy-IA-yrA" id="ZOd-Z4-lXm"/>
                         <outlet property="searchButton" destination="jUy-rv-PLo" id="eUx-vQ-8FV"/>
                         <outlet property="textView" destination="v7u-ac-ce2" id="3gg-hQ-Xq6"/>
+                        <outlet property="themeSwitch" destination="gDb-FR-XZA" id="JHh-yO-L81"/>
                         <outlet property="titleLabel" destination="ZvA-XD-nbL" id="o6u-Ja-bP6"/>
                     </connections>
                 </viewController>
