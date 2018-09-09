@@ -49,12 +49,31 @@ class MainVC: UIViewController{
     // - : FUNCTION
     
     func dayTimeThemeIsSelected(){
-        
+        self.rootView.backgroundColor = UIColor.white
+        self.headerView.backgroundColor = UIColor.white
+        self.titleLabel.textColor = UIColor.black
+        self.inputViewCard.backgroundColor = UIColor.white
+        self.searchBar.textColor = UIColor.black
+        self.outputViewCard.backgroundColor = UIColor.white
+        self.categoryLabel.textColor = UIColor.black
+        self.textView.textColor = UIColor.black
+        //self.searchButton.currentTitleColor = UIColor.black
+        self.searchButton.backgroundColor = UIColor.black
     }
     
     
     func nightTimeThemeIsSelected(){
-        
+        self.rootView.backgroundColor = UIColor.black
+        self.headerView.backgroundColor = UIColor.black
+        self.titleLabel.textColor = UIColor.white
+        self.inputViewCard.backgroundColor = UIColor.black
+        self.searchBar.textColor = UIColor.white
+        self.outputViewCard.backgroundColor = UIColor.black
+        self.categoryLabel.textColor = UIColor.white
+        self.textView.textColor = UIColor.white
+        //self.searchButton.currentTitleColor = UIColor.white
+        self.searchButton.backgroundColor = UIColor.white
+
     }
     
     
