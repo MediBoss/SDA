@@ -28,34 +28,34 @@
         // This Function contains the settings to change the app to a dark theme
         func dayTimeThemeIsSelected(){
             
-            self.rootView.backgroundColor = UIColor.white
-            self.headerView.backgroundColor = UIColor.white
-            self.titleLabel.textColor = UIColor.black
-            self.inputViewCard.backgroundColor = UIColor.white
-            self.searchBar.textColor = UIColor.black
-            self.outputViewCard.backgroundColor = UIColor.white
-            self.categoryLabel.textColor = UIColor.black
-            self.textView.textColor = UIColor.black
-                        self.textView.backgroundColor = UIColor.white
-            //self.searchButton.currentTitleColor = UIColor.black
-            self.searchButton.backgroundColor = UIColor.black
+            rootView.backgroundColor = UIColor.white
+            headerView.backgroundColor = UIColor.white
+            titleLabel.textColor = UIColor.black
+            inputViewCard.backgroundColor = UIColor.white
+            searchBar.textColor = UIColor.black
+            outputViewCard.backgroundColor = UIColor.white
+            categoryLabel.textColor = UIColor.black
+            textView.textColor = UIColor.black
+            textView.backgroundColor = UIColor.white
+            searchButton.setTitleColor(UIColor.white, for: .normal)
+            searchButton.backgroundColor = UIColor.black
             themeSwitch.setOn(false, animated: false)
         }
         
         //This Function contains the settings to change the app to a light theme
         func nightTimeThemeIsSelected(){
             
-            self.rootView.backgroundColor = UIColor.black
-            self.headerView.backgroundColor = UIColor.black
-            self.titleLabel.textColor = UIColor.white
-            self.inputViewCard.backgroundColor = UIColor.black
-            self.searchBar.textColor = UIColor.black
-            self.outputViewCard.backgroundColor = UIColor.black
-            self.categoryLabel.textColor = UIColor.white
-            self.textView.backgroundColor = UIColor.black
-            self.textView.textColor = UIColor.white
-            //self.searchButton.currentTitleColor = UIColor.white
-            self.searchButton.backgroundColor = UIColor.white
+            rootView.backgroundColor = UIColor.black
+            headerView.backgroundColor = UIColor.black
+            titleLabel.textColor = UIColor.white
+            inputViewCard.backgroundColor = UIColor.black
+            searchBar.textColor = UIColor.black
+            outputViewCard.backgroundColor = UIColor.black
+            categoryLabel.textColor = UIColor.white
+            textView.backgroundColor = UIColor.black
+            textView.textColor = UIColor.white
+            searchButton.setTitleColor(UIColor.black, for: .normal)
+            searchButton.backgroundColor = UIColor.white
             themeSwitch.setOn(true, animated: false)
         }
         
@@ -65,6 +65,7 @@
             guard let word = self.searchBar.text?.removeWhiteSpace() else {return}
             let networkRequest = NetworkService()
 
+                // SEARCHING UP THE WORD AND UPDATING THE USER INTERFACE
             networkRequest.makeAPIRequest(word) { (Term) in
                 DispatchQueue.main.async {
                     guard let definition = Term.definition, let category = Term.category else {return}
@@ -96,6 +97,12 @@
         
   
         override func viewDidLoad() {
+                // SETTING UP SEACH BUTTON
+            searchButton.layer.cornerRadius = 30
+            searchButton.clipsToBounds = true
+            searchButton.layer.masksToBounds = false
+            searchButton.layer.shadowRadius = 1
+            
             super.viewDidLoad()
             self.searchBar.delegate = self as UITextFieldDelegate
             let defaultSettings = UserDefaults.standard
