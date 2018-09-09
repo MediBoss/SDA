@@ -34,7 +34,7 @@ Simple, Lightweight, and easy-to-use iOS Dictioanry app that uses the Oxford RES
 ## Screenshots
 
 <img src= "Screenshots/sc1.PNG" width = 270 height = 510></img><img src= "Screenshots/sc2.PNG" width = 270 height = 510>
-<img src= "Screenshots/sc3.png" width = 270 height = 510></img><img src= "Screenshots/sc4.png" width = 270 height = 510>
+<img src= "Screenshots/sc5.png" width = 270 height = 510></img><img src= "Screenshots/sc4.png" width = 270 height = 510>
 
 
 
