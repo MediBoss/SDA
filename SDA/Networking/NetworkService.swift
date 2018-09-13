@@ -11,7 +11,7 @@ import Foundation
 struct NetworkService{
     
     // MARK: Function to make the request to the Oxford API
-     func makeAPIRequest(_ word: String,_ completionHandler: @escaping (TermDescription) ->Void){
+     func makeAPIRequest(_ word: String,_ completionHandler: @escaping (Term) ->Void){
         
         // MARK: Setting up the request headers to be made to the api
         let url = URL(string: "https://wordsapiv1.p.mashape.com/words/\(word)")
@@ -29,9 +29,8 @@ struct NetworkService{
                 switch httpResponse.statusCode{
                 case 200:
                     do{
-                        let term = try JSONDecoder().decode(TermDescription.self, from: dataFromApi)
-                        print(term)
-                        completionHandler(term)
+                        let term = try JSONDecoder().decode(Terms.self, from: dataFromApi)
+                        completionHandler(term.results.first!)
                         
                     }catch let errorFromDataReceived{
                         print(errorFromDataReceived.localizedDescription)

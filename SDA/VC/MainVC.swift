@@ -62,8 +62,13 @@
             guard let word = searchBar.text?.removeWhiteSpace() else {return}
             let networkRequest = NetworkService()
             
-            networkRequest.makeAPIRequest(word) { (Term) in
-                //
+            networkRequest.makeAPIRequest(word) { (term) in
+                DispatchQueue.main.async {
+                    
+                    guard let definition = term.definition, let category = term.partOfSpeech else {return}
+                    self.textView.text = definition
+                    self.categoryLabel.text = category
+                }
             }
         }
         
