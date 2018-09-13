@@ -8,14 +8,10 @@
 
 import Foundation
 
-
-
-
 struct Term: Decodable{
     
     var definition: String?
-    var partOfSpeech: String?
-    
+    var partOfSpeech: String?  
 }
 
 struct Terms: Decodable{
