@@ -61,7 +61,7 @@
         @IBAction func searchButtonIsTaped(_ sender: Any) {
             guard let word = searchBar.text?.removeWhiteSpace() else {return}
             let networkRequest = NetworkService()
-
+            
             networkRequest.makeAPIRequest(word) { (Term) in
                 DispatchQueue.main.async {
                     guard let definition = Term.definition, let category = Term.category else {return}

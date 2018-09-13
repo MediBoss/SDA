@@ -8,52 +8,27 @@
 
 import Foundation
 
-struct Term: Decodable {
+
+struct Term: Decodable{
     
     var definition: String?
     var category: String?
-
-    enum resultsKey: String, CodingKey{
-        case results
-        enum LexicalEntries: String, CodingKey{
-            
-            case entries, lexicalEntries, lexicalCategory
-            
-            enum LexicalCategory: String, CodingKey{
-                case lexicalCategory
-            }
-            enum entriesKey: String, CodingKey{
-                case entries
-                enum sensesKey: String, CodingKey{
-                    case senses
-                    enum DefinitionsKey: String, CodingKey{
-                        case definitions
-                    }
-                }
-                
-            }
+    
+    enum ResultsKey: String, CodingKey{
+      case results
+      enum CodingKeys: String, CodingKey{
+            case definition
+            case partOfSpeech
         }
     }
-
-    init(from decoder: Decoder) throws {
+    
+    init(from decoder: Decoder) throws{
         
-                // Decoding each needed layer of the JSON file returned
-        let firstEntryPoint = try decoder.container(keyedBy: resultsKey.self) // get address
-        var secondEntryPoint = try firstEntryPoint.nestedUnkeyedContainer(forKey: .results)// get in there
-        let thirdEntryPoint = try secondEntryPoint.nestedContainer(keyedBy: resultsKey.LexicalEntries.self)
-        var fourthEntryPoint = try thirdEntryPoint.nestedUnkeyedContainer(forKey: .lexicalEntries) // here boiii
+        let container = try decoder.container(keyedBy: ResultsKey.self)
+        let resultKey = try container.nestedUnkeyedContainer(forKey: .results)
         
         
-        let fithEntryPoint = try fourthEntryPoint.nestedContainer(keyedBy: resultsKey.LexicalEntries.entriesKey.self)
-        var sixthEntryPoint = try fithEntryPoint.nestedUnkeyedContainer(forKey: .entries)
-        let seventhEntryPoint = try sixthEntryPoint.nestedContainer(keyedBy: resultsKey.LexicalEntries.entriesKey.sensesKey.self)
-        var eithEntryPoint = try seventhEntryPoint.nestedUnkeyedContainer(forKey: .senses)
-        let ninethEntryPoint = try eithEntryPoint.nestedContainer(keyedBy: resultsKey.LexicalEntries.entriesKey.sensesKey.DefinitionsKey.self)
-        var tenthEntryPoint = try ninethEntryPoint.nestedUnkeyedContainer(forKey: .definitions)
-        let eleventhEntryPoint = try fourthEntryPoint.nestedContainer(keyedBy: resultsKey.LexicalEntries.LexicalCategory.self)
         
-        // Updating the stored properties
-        self.definition = try? tenthEntryPoint.decode(String.self)
-        self.category = try? eleventhEntryPoint.decode(String.self, forKey: .lexicalCategory)
     }
+    
 }

@@ -10,19 +10,16 @@ import Foundation
 
 struct NetworkService{
     
-    // var singleton = NetworkService()
-    
     // MARK: Function to make the request to the Oxford API
      func makeAPIRequest(_ word: String,_ completionHandler: @escaping (Term) ->Void){
         
         // MARK: Setting up the request headers to be made to the api
-        let url = URL(string: "\(Constants.baseURL)/\(Constants.source_lang)/\(word)")
+        let url = URL(string: "https://wordsapiv1.p.mashape.com/words/\(word)")
         guard let unwrapedURL = url else {return}
         var request: URLRequest = URLRequest(url: unwrapedURL)
-        request.addValue("\(Constants.httpAcceptHeader)", forHTTPHeaderField: "Accept")
-        request.addValue("\(Constants.app_id)", forHTTPHeaderField: "app_id")
-        request.addValue("\(Constants.apiKey)", forHTTPHeaderField: "app_key")
         
+        request.addValue("\(Constants.api_key)", forHTTPHeaderField: "X-Mashape-Key")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
         // MARK: Launching the GET request to the API
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             if error == nil{
@@ -33,9 +30,7 @@ struct NetworkService{
                 switch httpResponse.statusCode{
                 case 200:
                     do{
-                        
                         guard let dataFromApi = data else {return}
-                        // MARK: Decoding the data recievd from the server into a Term object
                         let decoder = JSONDecoder()
                         let term = try decoder.decode(Term.self, from: dataFromApi)
                         completionHandler(term)
