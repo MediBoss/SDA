@@ -9,12 +9,13 @@
 import UIKit
 
 extension MainVC: UITextFieldDelegate{
-        // Making sure that when the user taps "return", the keyboard goes away
+    
+    // This function Making sure that when the user taps "return", the keyboard goes away
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField{
         case searchBar:
             searchBar.resignFirstResponder()
-            
         default:
             searchBar.resignFirstResponder()
         }

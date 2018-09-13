@@ -9,8 +9,9 @@
 import Foundation
 
 public class Constants{
-            // A list of parameters needed for the API call
+            // A list of http headers needed for the API call
     static let apiKey: String = "e43c5c4fc39024d2394905f2308e807e"
+    static let httpAcceptHeader: String = "application/json"
     static let source_lang: String = "en"
     static let app_id: String = "    28a38b56"
     static let baseURL: URL = URL(string: "https://od-api.oxforddictionaries.com:443/api/v1/entries")!

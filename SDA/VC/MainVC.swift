@@ -22,9 +22,7 @@
         @IBOutlet weak var searchButton: UIButton!
         @IBOutlet weak var themeSwitch: UISwitch!
         
-        // - MARK : METHODS & IBACTIONS
-        
-        
+
         // This Function contains the settings to change the app to a dark theme
         func dayTimeThemeIsSelected(){
             
@@ -59,13 +57,11 @@
             themeSwitch.setOn(true, animated: false)
         }
         
-        
-
+        // This Function looks up the word and updates the User Interface
         @IBAction func searchButtonIsTaped(_ sender: Any) {
-            guard let word = self.searchBar.text?.removeWhiteSpace() else {return}
+            guard let word = searchBar.text?.removeWhiteSpace() else {return}
             let networkRequest = NetworkService()
 
-                // SEARCHING UP THE WORD AND UPDATING THE USER INTERFACE
             networkRequest.makeAPIRequest(word) { (Term) in
                 DispatchQueue.main.async {
                     guard let definition = Term.definition, let category = Term.category else {return}
@@ -75,7 +71,7 @@
             }
         }
         
-        // This function applies the settings to switch the theme through a Switch
+        // This function applies the settings to switch the app theme through a Switch
         @IBAction func themeSwitchToggled(_ sender: Any) {
             
             let defaultPreferences = UserDefaults.standard
@@ -105,8 +101,9 @@
             
             super.viewDidLoad()
             self.searchBar.delegate = self as UITextFieldDelegate
-            let defaultSettings = UserDefaults.standard
             
+            // SETTINGS TO PERSIST NIGHT TIME/DAY TIME THEME MODE
+            let defaultSettings = UserDefaults.standard
             if let isMidnightThemOn: Bool = defaultSettings.value(forKey: "midnightThemeOn") as! Bool? {
                 if isMidnightThemOn{
                     

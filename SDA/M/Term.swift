@@ -10,13 +10,15 @@ import Foundation
 
 struct Term: Decodable {
     
-    var definition: String? // first definition of the term
-    var category: String? // The category of the term(noun,verb, adjcetive)
+    var definition: String?
+    var category: String?
 
     enum resultsKey: String, CodingKey{
         case results
         enum LexicalEntries: String, CodingKey{
+            
             case entries, lexicalEntries, lexicalCategory
+            
             enum LexicalCategory: String, CodingKey{
                 case lexicalCategory
             }
@@ -40,6 +42,8 @@ struct Term: Decodable {
         var secondEntryPoint = try firstEntryPoint.nestedUnkeyedContainer(forKey: .results)// get in there
         let thirdEntryPoint = try secondEntryPoint.nestedContainer(keyedBy: resultsKey.LexicalEntries.self)
         var fourthEntryPoint = try thirdEntryPoint.nestedUnkeyedContainer(forKey: .lexicalEntries) // here boiii
+        
+        
         let fithEntryPoint = try fourthEntryPoint.nestedContainer(keyedBy: resultsKey.LexicalEntries.entriesKey.self)
         var sixthEntryPoint = try fithEntryPoint.nestedUnkeyedContainer(forKey: .entries)
         let seventhEntryPoint = try sixthEntryPoint.nestedContainer(keyedBy: resultsKey.LexicalEntries.entriesKey.sensesKey.self)
@@ -48,7 +52,7 @@ struct Term: Decodable {
         var tenthEntryPoint = try ninethEntryPoint.nestedUnkeyedContainer(forKey: .definitions)
         let eleventhEntryPoint = try fourthEntryPoint.nestedContainer(keyedBy: resultsKey.LexicalEntries.LexicalCategory.self)
         
-        
+        // Updating the stored properties
         self.definition = try? tenthEntryPoint.decode(String.self)
         self.category = try? eleventhEntryPoint.decode(String.self, forKey: .lexicalCategory)
     }

@@ -9,7 +9,7 @@
 import Foundation
 
 extension String{
-    // MARK: Function to remove whitespace from a string
+    // MARK: Function to remove whitespace from a string before making the call to the api
     func removeWhiteSpace() -> String{
         return self.replacingOccurrences(of: " ", with: "")
     }
