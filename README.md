@@ -2,7 +2,7 @@
 
 ## Overview 
 
-Simple, Lightweight, and easy-to-use iOS Dictioanry app that uses the Oxford RESTFul API to fetch nouns, verbs, pronouns, adjectives and retriving their definitions and category.
+Simple, Lightweight, and easy-to-use iOS Dictioanry app that is powered by the WORDSAPI to fetch nouns, verbs, pronouns, adjectives and retriving their definitions and category.
 
 ## Todo
 
