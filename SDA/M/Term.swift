@@ -9,26 +9,10 @@
 import Foundation
 
 
+struct TermDescription: Decodable{
+    let results: [Term]
+}
 struct Term: Decodable{
-    
-    var definition: String?
-    var category: String?
-    
-    enum ResultsKey: String, CodingKey{
-      case results
-      enum CodingKeys: String, CodingKey{
-            case definition
-            case partOfSpeech
-        }
-    }
-    
-    init(from decoder: Decoder) throws{
-        
-        let container = try decoder.container(keyedBy: ResultsKey.self)
-        let resultKey = try container.nestedUnkeyedContainer(forKey: .results)
-        
-        
-        
-    }
-    
+    var definition: String
+    var partOfSpeech: String
 }

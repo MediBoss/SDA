@@ -11,32 +11,29 @@ import Foundation
 struct NetworkService{
     
     // MARK: Function to make the request to the Oxford API
-     func makeAPIRequest(_ word: String,_ completionHandler: @escaping (Term) ->Void){
+     func makeAPIRequest(_ word: String,_ completionHandler: @escaping (TermDescription) ->Void){
         
         // MARK: Setting up the request headers to be made to the api
         let url = URL(string: "https://wordsapiv1.p.mashape.com/words/\(word)")
         guard let unwrapedURL = url else {return}
         var request: URLRequest = URLRequest(url: unwrapedURL)
-        
         request.addValue("\(Constants.api_key)", forHTTPHeaderField: "X-Mashape-Key")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
         // MARK: Launching the GET request to the API
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             if error == nil{
                 
-                guard let httpResponse = response as? HTTPURLResponse else {return}
+                guard let httpResponse = response as? HTTPURLResponse, let dataFromApi = data else {return}
                 
-                // MARK: evaluating the JSON response from the API
                 switch httpResponse.statusCode{
                 case 200:
                     do{
-                        guard let dataFromApi = data else {return}
-                        let decoder = JSONDecoder()
-                        let term = try decoder.decode(Term.self, from: dataFromApi)
+                        let term = try JSONDecoder().decode(TermDescription.self, from: dataFromApi)
+                        print(term)
                         completionHandler(term)
                         
                     }catch let errorFromDataReceived{
-                        //MARK: Checking for possible errors
                         print(errorFromDataReceived.localizedDescription)
                     }
                 default:

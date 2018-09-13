@@ -63,11 +63,7 @@
             let networkRequest = NetworkService()
             
             networkRequest.makeAPIRequest(word) { (Term) in
-                DispatchQueue.main.async {
-                    guard let definition = Term.definition, let category = Term.category else {return}
-                    self.textView.text = definition
-                    self.categoryLabel.text = category
-                }
+                //
             }
         }
         
