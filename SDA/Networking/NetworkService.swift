@@ -10,7 +10,7 @@ import Foundation
 
 struct NetworkService{
     
-    // MARK: Function to make the request to the Oxford API
+    // MARK: Function to make the request to API
      func makeAPIRequest(_ word: String,_ completionHandler: @escaping (Term) ->Void){
         
         // MARK: Setting up the request headers to be made to the api
