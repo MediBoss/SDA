@@ -12,7 +12,7 @@ Simple, Lightweight, and easy-to-use iOS Dictioanry app that is powered by the W
 - [x] Correctly fetch category of a word 
 - [x] Add Light and Night Mode theme
 - [x] Remove spaces in searched word
-- [ ] Add view to the app that gives credit to the Oxford API
+- [ ] Add view to the app that gives credit to the WORDSAPI API
 
 ## Contributors
 
