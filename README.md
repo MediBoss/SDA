@@ -33,7 +33,8 @@ Simple, Lightweight, and easy-to-use iOS Dictioanry app that is powered by the W
 
 ## Screenshots
 
-<img src= "Screenshots/sc1.PNG" width = 270 height = 550></img><img src= "Screenshots/sc5.png" width = 270 height = 550>
+<img src= "Screenshots/sc1.PNG" width = 270 height = 550></img><img src= "Screenshots/sc5.png" width = 270 height = 550><img src= "Screenshots/sc6.PNG" width = 270 height = 550>
+
 
 
 
